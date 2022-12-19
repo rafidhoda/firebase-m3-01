@@ -3,10 +3,16 @@ const addButtonEl = document.getElementById("add-button")
 
 /*
 Challenge:
-Add an eventlistener to addButtonEl and console log whatever the user put in the inputFieldEl when button is clicked.
+Create an array called shoppingListItems and set it to the empty array.
 */
+
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
+
+    /*
+    Challenge:
+    Push the inputValue to the shoppingListItems array
+    */
 
     console.log(inputValue)
 })
