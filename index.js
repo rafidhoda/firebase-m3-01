@@ -5,3 +5,8 @@ const addButtonEl = document.getElementById("add-button")
 Challenge:
 Add an eventlistener to addButtonEl and console log whatever the user put in the inputFieldEl when button is clicked.
 */
+addButtonEl.addEventListener("click", function() {
+    let inputValue = inputFieldEl.value
+
+    console.log(inputValue)
+})
