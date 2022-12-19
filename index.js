@@ -1,7 +1,7 @@
-/*
-Challenge:
-1. Add a const variable for the 'input-field' DOM element
-2. Add a const variable for the 'add-button' DOM element
-*/
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
+
+/*
+Challenge:
+Add an eventlistener to addButtonEl and console log whatever the user put in the inputFieldEl when button is clicked.
+*/
