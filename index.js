@@ -5,6 +5,7 @@ const addButtonEl = document.getElementById("add-button")
 Challenge:
 Create an array called shoppingListItems and set it to the empty array.
 */
+let shoppingListItems = []
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
@@ -13,6 +14,7 @@ addButtonEl.addEventListener("click", function() {
     Challenge:
     Push the inputValue to the shoppingListItems array
     */
+   shoppingListItems.push(inputValue)
 
     console.log(inputValue)
 })
