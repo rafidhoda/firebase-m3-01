@@ -11,7 +11,7 @@ const shoppingListItemsInDB = ref(database, "shoppingListItems")
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
-// Challenge: Add const for 'shopping-list-items' ul
+const shoppingListItemsEl = document.getElementById("shopping-list-items")
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
@@ -20,5 +20,5 @@ addButtonEl.addEventListener("click", function() {
 
     inputFieldEl.value = ""
 
-    // Challenge: Use innerHTML on new const to add latest inputValue as an li
+    shoppingListItemsEl.innerHTML += `<li>${inputValue}</li>`
 })
