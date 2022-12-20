@@ -18,13 +18,15 @@ addButtonEl.addEventListener("click", function() {
 
     push(shoppingListItemsInDB, inputValue)
 
-    inputFieldEl.value = ""
+    clearInputField(inputFieldEl)
 
-    shoppingListItemsEl.innerHTML += `<li>${inputValue}</li>`
+    addNewItemElToListEl(shoppingListItemsEl, inputValue)
 })
 
-/*
-Challenge:
-1. Extract out line 21 into it's own function called clearInputField()
-2. Extract out line 23 into it's own function called addNewItemElToList(itemName)
-*/
+function clearInputField(inputEl) {
+    inputEl.value = ""
+}
+
+function addNewItemElToListEl(listEl, itemName) {
+    listEl.innerHTML += `<li>${itemName}</li>`
+}
