@@ -1,5 +1,3 @@
-// Firebase - START
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
@@ -9,9 +7,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app)
-const shoppingListItemsInDB = ref(database, "shoppingListItems")
-
-// Firebase - END
+// Challenge: Create a reference called shoppingListItemsInDB in the database
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
@@ -22,7 +18,7 @@ addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
 
     shoppingListItems.push(inputValue)
-    push(shoppingListItemsInDB, inputValue)
+    // Challenge: Push inputValue to the database at the shoppingListItemsInDB reference
 
     console.log(inputValue)
 })
