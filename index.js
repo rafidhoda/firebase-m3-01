@@ -22,3 +22,9 @@ addButtonEl.addEventListener("click", function() {
 
     shoppingListItemsEl.innerHTML += `<li>${inputValue}</li>`
 })
+
+/*
+Challenge:
+1. Extract out line 21 into it's own function called clearInputField()
+2. Extract out line 23 into it's own function called addNewItemElToList(itemName)
+*/
