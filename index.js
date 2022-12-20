@@ -18,4 +18,6 @@ addButtonEl.addEventListener("click", function() {
     push(shoppingListItemsInDB, inputValue)
 
     inputFieldEl.value = ""
+
+    // Challenge write a for loop that renders all the items in the "shopping-list-items" ul using lis
 })
