@@ -1,20 +1,28 @@
+// Firebase - START
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+
+const firebaseConfig = {
+    databaseURL: "https://playground-eaa33-default-rtdb.europe-west1.firebasedatabase.app/"
+}
+
+const app = initializeApp(firebaseConfig)
+const database = getDatabase(app)
+const shoppingListItemsInDB = ref(database, "shoppingListItems")
+
+// Firebase - END
+
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
 
-/*
-Challenge:
-Create an array called shoppingListItems and set it to the empty array.
-*/
 let shoppingListItems = []
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
 
-    /*
-    Challenge:
-    Push the inputValue to the shoppingListItems array
-    */
-   shoppingListItems.push(inputValue)
+    shoppingListItems.push(inputValue)
+    push(shoppingListItemsInDB, inputValue)
 
     console.log(inputValue)
 })
