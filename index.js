@@ -27,6 +27,11 @@ onValue(shoppingListItemsInDB, function(snapshot) {
     let shoppingListItemsObject = snapshot.val()
     let shoppingListItemsArray = Object.values(shoppingListItemsObject)
 
+    /*
+    Challenge:
+    Write a for loop and inside use innerHTML on shoppingListItemEl to render database items in the ul.
+    */
+
     console.log(shoppingListItemsArray)
 })
 
