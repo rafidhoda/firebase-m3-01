@@ -14,23 +14,17 @@ const addButtonEl = document.getElementById("add-button")
 const shoppingListItemsEl = document.getElementById("shopping-list-items")
 
 addButtonEl.addEventListener("click", function() {
-    /*
-    This is the 'main' function.
-    Notice how well it reads.
-    All the instructions are laid out, in order, with function names that tell us exactly what happens.
-    */
+    let inputValue = inputFieldEl.value
 
-    pushItemToDB()
+    pushItemToDB(inputValue)
 
     clearInputField()
 
     addNewItemElToListEl(inputValue)
 })
 
-function pushItemToDB() {
-    let inputValue = inputFieldEl.value
-
-    push(shoppingListItemsInDB, inputValue)
+function pushItemToDB(item) {
+    push(shoppingListItemsInDB, item)
 }
 
 function clearInputField() {
