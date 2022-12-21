@@ -24,7 +24,12 @@ addButtonEl.addEventListener("click", function() {
 })
 
 onValue(shoppingListItemsInDB, function(snapshot) {
-    console.log(snapshot.val())
+    /*
+    Challenge:
+    1. Create a let variable called 'shoppingListItemsObject' and set it equal to snapshot.val()
+    2. Create a let variable called 'shoppingListItemsArray' and use Object.values to set it equal to an array with the values
+    3. Console log shoppingListItemsArray
+    */
 })
 
 function pushItemToDB(item) {
