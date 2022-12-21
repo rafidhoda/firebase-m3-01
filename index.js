@@ -43,6 +43,8 @@ function addNewItemElToListEl(itemName) {
 
     newItemEl.textContent = itemName
 
+    // Challenge: Add an event listener to newItemEl and remove newItemEl on click
+
     shoppingListItemsEl.append(newItemEl)
 }
 
