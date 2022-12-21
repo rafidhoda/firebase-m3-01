@@ -27,13 +27,7 @@ onValue(shoppingListItemsInDB, function(snapshot) {
 
     clearListEl()
 
-    for (let i = 0; i < shoppingListItemsArray.length; i++) {
-        let currentItem = shoppingListItemsArray[i]
-
-        addNewItemElToListEl(currentItem)
-    }
-
-    console.log(shoppingListItemsArray)
+    renderListItems(shoppingListItemsArray)
 })
 
 function pushItemToDB(item) {
@@ -50,4 +44,12 @@ function addNewItemElToListEl(itemName) {
 
 function clearListEl() {
     shoppingListItemsEl.innerHTML = ""
+}
+
+function renderListItems(array) {
+    for (let i = 0; i < array.length; i++) {
+        let currentItem = array[i]
+
+        addNewItemElToListEl(currentItem)
+    }
 }
