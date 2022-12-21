@@ -25,7 +25,7 @@ onValue(shoppingListItemsInDB, function(snapshot) {
     let shoppingListItemsObject = snapshot.val()
     let shoppingListItemsArray = Object.values(shoppingListItemsObject)
 
-    shoppingListItemsEl.innerHTML = ""
+    clearListEl()
 
     for (let i = 0; i < shoppingListItemsArray.length; i++) {
         let currentItem = shoppingListItemsArray[i]
@@ -46,4 +46,8 @@ function clearInputField() {
 
 function addNewItemElToListEl(itemName) {
     shoppingListItemsEl.innerHTML += `<li>${itemName}</li>`
+}
+
+function clearListEl() {
+    shoppingListItemsEl.innerHTML = ""
 }
