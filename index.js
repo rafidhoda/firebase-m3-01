@@ -28,7 +28,9 @@ onValue(shoppingListItemsInDB, function(snapshot) {
     let shoppingListItemsArray = Object.values(shoppingListItemsObject)
 
     for (let i = 0; i < shoppingListItemsArray.length; i++) {
-        shoppingListItemsEl.innerHTML += `<li>${shoppingListItemsArray[i]}</li>`
+        let currentItem = shoppingListItemsArray[i]
+
+        shoppingListItemsEl.innerHTML += `<li>${currentItem}</li>`
     }
 
     console.log(shoppingListItemsArray)
