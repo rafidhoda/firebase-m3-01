@@ -18,8 +18,6 @@ addButtonEl.addEventListener("click", function() {
 
     pushItemToDB(inputValue)
 
-    addNewItemElToListEl(inputValue)
-
     clearInputField()
 })
 
@@ -27,10 +25,12 @@ onValue(shoppingListItemsInDB, function(snapshot) {
     let shoppingListItemsObject = snapshot.val()
     let shoppingListItemsArray = Object.values(shoppingListItemsObject)
 
+    shoppingListItemsEl.innerHTML = ""
+
     for (let i = 0; i < shoppingListItemsArray.length; i++) {
         let currentItem = shoppingListItemsArray[i]
 
-        shoppingListItemsEl.innerHTML += `<li>${currentItem}</li>`
+        addNewItemElToListEl(currentItem)
     }
 
     console.log(shoppingListItemsArray)
