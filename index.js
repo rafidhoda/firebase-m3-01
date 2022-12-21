@@ -40,6 +40,12 @@ function clearInputField() {
 
 function addNewItemElToListEl(itemName) {
     shoppingListItemsEl.innerHTML += `<li>${itemName}</li>`
+
+    // Challenge: Use createElement to create a new list element that uses createElement
+
+    // Challenge: Use itemName to set the text content of the new element
+
+    // Challenge: Add this new element to shoppingListItemsEl
 }
 
 function clearListEl() {
