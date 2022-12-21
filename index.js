@@ -18,9 +18,9 @@ addButtonEl.addEventListener("click", function() {
 
     pushItemToDB(inputValue)
 
-    clearInputField()
-
     addNewItemElToListEl(inputValue)
+
+    clearInputField()
 })
 
 function pushItemToDB(item) {
