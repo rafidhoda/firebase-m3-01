@@ -39,13 +39,11 @@ function clearInputField() {
 }
 
 function addNewItemElToListEl(itemName) {
-    shoppingListItemsEl.innerHTML += `<li>${itemName}</li>`
+    let newItemEl = document.createElement("li")
 
-    // Challenge: Use createElement to create a new list element that uses createElement
+    newItemEl.textContent = itemName
 
-    // Challenge: Use itemName to set the text content of the new element
-
-    // Challenge: Add this new element to shoppingListItemsEl
+    shoppingListItemsEl.append(newItemEl)
 }
 
 function clearListEl() {
