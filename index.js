@@ -23,6 +23,13 @@ addButtonEl.addEventListener("click", function() {
     clearInputField()
 })
 
+/*
+Challenge:
+1. Import the onValue function from firebase on line 2
+2. Call the onValue function below on with 'shoppingListItemsInDB' as the first argument and function(snapshot){} as the second argument
+3. Console log snapshot.val() inside of the function
+*/
+
 function pushItemToDB(item) {
     push(shoppingListItemsInDB, item)
 }
