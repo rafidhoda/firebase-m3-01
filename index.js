@@ -7,7 +7,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app)
-const shoppingListItemsInDB = ref(database, "shoppingListItems")
+const databaseReferenceName = "shoppingListItems"
+const databaseReference = ref(database, databaseReferenceName)
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
@@ -21,7 +22,7 @@ addButtonEl.addEventListener("click", function() {
     clearInputField()
 })
 
-onValue(shoppingListItemsInDB, function(snapshot) {
+onValue(databaseReference, function(snapshot) {
     let shoppingListItemsObject = snapshot.val()
     let shoppingListItemsArray = Object.entries(shoppingListItemsObject)
 
@@ -31,7 +32,7 @@ onValue(shoppingListItemsInDB, function(snapshot) {
 })
 
 function pushItemToDB(item) {
-    push(shoppingListItemsInDB, item)
+    push(databaseReference, item)
 }
 
 function clearInputField() {
@@ -65,7 +66,7 @@ function renderListItems(array) {
 }
 
 function removeItemInDB(itemID) {
-    let exactLocationOfItemInDB = ref(database, `shoppingListItems/${itemID}`)
+    let exactLocationOfItemInDB = ref(database, `${databaseReferenceName}/${itemID}`)
 
     remove(exactLocationOfItemInDB)
 }
