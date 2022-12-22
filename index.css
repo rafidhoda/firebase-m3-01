@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cat {
+    width: 170px;
+    margin: 0 auto;
+}
