@@ -44,10 +44,8 @@ function addNewItemElToListEl(itemName, itemID) {
     newItemEl.textContent = itemName
 
     newItemEl.addEventListener("click", function() {
-        let exactLocationOfItemInDB = ref(database, `shoppingListItems/${itemID}`)
-
-        remove(exactLocationOfItemInDB)
-        newItemEl.remove()
+        removeItemInDB(itemID)
+        removeItemEl(newItemEl)
     })
 
     shoppingListItemsEl.append(newItemEl)
@@ -64,4 +62,14 @@ function renderListItems(array) {
 
         addNewItemElToListEl(currentItemValue, currentItemID)
     }
+}
+
+function removeItemInDB(itemID) {
+    let exactLocationOfItemInDB = ref(database, `shoppingListItems/${itemID}`)
+
+    remove(exactLocationOfItemInDB)
+}
+
+function removeItemEl(element) {
+    element.remove()
 }
