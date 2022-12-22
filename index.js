@@ -23,7 +23,7 @@ addButtonEl.addEventListener("click", function() {
 
 onValue(shoppingListItemsInDB, function(snapshot) {
     let shoppingListItemsObject = snapshot.val()
-    let shoppingListItemsArray = Object.values(shoppingListItemsObject)
+    let shoppingListItemsArray = Object.entries(shoppingListItemsObject)
 
     clearListEl()
 
@@ -38,16 +38,16 @@ function clearInputField() {
     inputFieldEl.value = ""
 }
 
-function addNewItemElToListEl(itemName) {
+function addNewItemElToListEl(itemName, itemID) {
     let newItemEl = document.createElement("li")
 
     newItemEl.textContent = itemName
 
     newItemEl.addEventListener("click", function() {
-        let itemID = "-NJpOJjb8EQFvfqICoLe"
         let exactLocationOfItemInDB = ref(database, `shoppingListItems/${itemID}`)
 
         remove(exactLocationOfItemInDB)
+        newItemEl.remove()
     })
 
     shoppingListItemsEl.append(newItemEl)
@@ -59,8 +59,9 @@ function clearListEl() {
 
 function renderListItems(array) {
     for (let i = 0; i < array.length; i++) {
-        let currentItem = array[i]
+        let currentItemID = array[i][0]
+        let currentItemValue = array[i][1]
 
-        addNewItemElToListEl(currentItem)
+        addNewItemElToListEl(currentItemValue, currentItemID)
     }
 }
