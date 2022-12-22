@@ -45,9 +45,8 @@ function addNewItemElToListEl(itemName, itemID) {
     newItemEl.textContent = itemName
 
     newItemEl.addEventListener("click", function() {
-        // removeItemInDB(itemID)
-        // removeItemEl(newItemEl)
-        updateItemInDB(itemID)
+        removeItemInDB(itemID)
+        removeItemEl(newItemEl)
     })
 
     shoppingListItemsEl.append(newItemEl)
